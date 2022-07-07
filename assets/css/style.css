@@ -25,6 +25,9 @@
   padding: 0 8px;
   position: relative;
 }
+.nav-left__item:hover > .sub-item-list {
+  display: inline-block;
+}
 .nav-left__link:hover,
 .nav-left__link.active:hover {
   color: var(--primary-color);
@@ -55,9 +58,35 @@
 /* =================SUB-ITEM============================= */
 .sub-item-list {
   position: absolute;
-  top: 40px;
+  top: 42px;
+  right: -140px;
+  transform: translateX(-50%);
+  background-color: #1a1c22;
+  width: 180px;
+  z-index: 2;
+  display: none;
 }
 .sub-item-item {
+  padding: 8px 0;
+  text-align: center;
+}
+.sub-item-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+.sub-item-item:hover > .sub-item-link {
+  color: var(--primary-color);
 }
 .sub-item-link {
+  padding: 8px 40px;
+  color: #959699;
+}
+
+.sub-item-list::after {
+  content: '';
+  position: absolute;
+  top: -25px;
+  display: block;
+  height: 25px;
+  width: 181px;
 }
