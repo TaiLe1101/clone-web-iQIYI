@@ -6,11 +6,16 @@
   display: flex;
   align-items: center;
   height: 60px;
-  background-color: #333;
+  background-color: #000;
+}
+.nav-warp {
+  display: flex;
+  align-items: center;
 }
 
 .nav-left {
   display: flex;
+  margin-right: 140px;
 }
 .nav-left__logo {
   width: 82px;
@@ -65,10 +70,18 @@
   width: 180px;
   z-index: 2;
   display: none;
+  border-radius: 4px;
+  border: 1px solid #666;
 }
 .sub-item-item {
   padding: 8px 0;
   text-align: center;
+}
+.sub-item-item:first-child {
+  margin-top: 8px;
+}
+.sub-item-item:last-child {
+  margin-bottom: 8px;
 }
 .sub-item-item:hover {
   background-color: rgba(255, 255, 255, 0.08);
@@ -89,4 +102,76 @@
   display: block;
   height: 25px;
   width: 181px;
+}
+.sub-item-list::before {
+  content: '';
+  position: absolute;
+  border: 10px solid;
+  border-color: transparent transparent #1a1c22 transparent;
+  top: -20px;
+  right: 81px;
+}
+/* ========================SEARCH============================= */
+.nav-search {
+  position: relative;
+}
+.search {
+  width: 240px;
+  height: 36px;
+  padding: 0px 53px 0px 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  overflow: hidden;
+}
+.search:focus ~ .result-search {
+  display: block;
+}
+.search-icon {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border-left: 1px solid;
+  padding-left: 14px;
+}
+.search-icon:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.result-search {
+  position: absolute;
+  top: 48px;
+  background-color: #1a1c22;
+  width: 239px;
+  color: #999;
+  max-height: 545px;
+  border: 1px solid;
+  border-radius: 4px;
+  overflow: hidden;
+  display: none;
+}
+.result {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.result:hover {
+  color: var(--primary-color);
+  background-color: #000;
+  cursor: pointer;
+}
+.result__top {
+  margin-right: 10px;
+  font-weight: 700;
+}
+.result__top.ontop {
+  color: var(--primary-color);
+  font-size: 16px;
+}
+.result__name {
+  font-size: 14px;
 }
